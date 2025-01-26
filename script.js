@@ -25,3 +25,46 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
+
+/*----------------------------Saving contact me data--------------------------------------- */
+const express = require("express");
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
+
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Serve static files if needed
+app.use(express.static("public"));
+
+app.post("/send-message", async (req, res) => {
+    const { name, email, subject, message } = req.body;
+
+    const transporter = nodemailer.createTransport({
+        service: "gmail", // Or use another email service
+        auth: {
+            user: "goodmandzunan@gmail.com", // Replace with your email
+            pass: "123"  // Replace with your password or app password
+        }
+    });
+
+    const mailOptions = {
+        from: email,
+        to: "goodmandzunan@gmail.com",
+        subject: subject || "No Subject",
+        text: `Message from ${name} (${email}):\n\n${message}`,
+    };
+
+    try {
+        await transporter.sendMail(mailOptions);
+        res.send("Message sent successfully!");
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Failed to send message.");
+    }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

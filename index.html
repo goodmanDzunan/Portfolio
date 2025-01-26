@@ -141,7 +141,7 @@
                     <i class="bx bx-code"></i>
                     <h4>Backend Development</h4>
                     <p>
-                        I am building my skills in creating server-side solutions using programming languages like C#, Python 
+                        I have skills in creating server-side solutions using programming languages including C#, Python 
                         and JavaScript (Node.js). I have experience working with SQL databases and I am eager to learn 
                         and grow my expertise in developing APIs and scalable applications.
                     </p>
@@ -177,7 +177,7 @@
                     Human-Computer interaction which determines
                     whether it is user friendly.
                 </p>
-                <a class="btn" href="https://github.com/goodmanDzunan/ToDoList_app">Review Project</a>
+                <a class="btn" target="_blank" href="https://github.com/goodmanDzunan/ToDoList_app">Review Project</a>
 
             </div>
             <div class="project-card">
@@ -188,7 +188,7 @@
                     In this Project I did an analysis on a Spotify dataset to check the most played genre and top artists in the music industry according to 
                     what the listeners listen to the most.
                 </p>
-                <a class="btn" href="https://colab.research.google.com/drive/1xC8fxvz5FGQ3ZIA7jqm2zAd3SxsZQ5hm#scrollTo=n0AhvzOwSt6v" target="_blank" rel="noopener noreferrer">
+                <a class="btn" target="_blank" href="https://colab.research.google.com/drive/1xC8fxvz5FGQ3ZIA7jqm2zAd3SxsZQ5hm#scrollTo=n0AhvzOwSt6v" target="_blank" rel="noopener noreferrer">
                     Review Project
                 </a>
 
@@ -201,7 +201,7 @@
                 <p>
                     A user friendly dashboard visualization I did from lookerstudio where I was comparing consumers' employment statuses and Price Increase.
                 </p>
-                <a class="btn" href="https://lookerstudio.google.com/u/0/reporting/77f1c832-d5b8-41d9-845a-1b8c0f108216/page/1nJ0D">Review Project</a>
+                <a class="btn" target="_blank" href="https://lookerstudio.google.com/u/0/reporting/77f1c832-d5b8-41d9-845a-1b8c0f108216/page/1nJ0D">Review Project</a>
 
             </div>
 
@@ -210,9 +210,20 @@
 
                 <h3>Memory Game</h3>
                 <p>
+                    Test your memory skills with this fun game!
+                </p>
+                <a class="btn" target="_blank" href="https://goodmandzunan.github.io/Memory_Game/">Review Project</a>
+
+            </div>
+
+            <div class="project-card">
+                <img src="coming soon.jpg" alt="">
+
+                <h3>Project 7</h3>
+                <p>
                     Coming Soon!
                 </p>
-                <a class="btn" href="#coming_soon">Review Project</a>
+                <a class="btn" href="#Coming Soon">Review Project</a>
 
             </div>
 
@@ -227,7 +238,7 @@
             <div class="wrapper">
                 <div class="testimonial-item">
                     <img src="ind2.jpg" alt="">
-                    <h2>M-Jay</h2>
+                    <h2>M Jay</h2>
                     <div class="rating">
                         <i class='bx bxs-star' id="star"></i>
                         <i class='bx bxs-star' id="star"></i>
@@ -242,7 +253,7 @@
                 </div>
 
                 <div class="testimonial-item">
-                    <img src="ind1.jpg" alt="">
+                    <img src="ind2.jpg" alt="">
                     <h2>Sibusiso</h2>
                     <div class="rating">
                         <i class='bx bxs-star' id="star"></i>
@@ -279,23 +290,20 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
 
-        <form action="">
-
+        <form action="/send-message" method="POST">
             <div class="input-group">
-
                 <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Subject">
+                    <input type="text" id="subject" name="subject" placeholder="Subject">
                 </div>
-           
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                <textarea id="message" name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
                 <input type="submit" value="Send Message" class="btn">
             </div>
-
         </form>
+        
     </section>
 
     <footer class="footer">
@@ -326,6 +334,7 @@
 
     </footer>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
