@@ -26,45 +26,40 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 }
 
-/*----------------------------Saving contact me data--------------------------------------- */
-const express = require("express");
-const bodyParser = require("body-parser");
-const nodemailer = require("nodemailer");
-
-const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Serve static files if needed
-app.use(express.static("public"));
-
-app.post("/send-message", async (req, res) => {
-    const { name, email, subject, message } = req.body;
-
-    const transporter = nodemailer.createTransport({
-        service: "gmail", // Or use another email service
-        auth: {
-            user: "goodmandzunan@gmail.com", // Replace with your email
-            pass: "123"  // Replace with your password or app password
-        }
-    });
-
-    const mailOptions = {
-        from: email,
-        to: "goodmandzunan@gmail.com",
-        subject: subject || "No Subject",
-        text: `Message from ${name} (${email}):\n\n${message}`,
-    };
-
-    try {
-        await transporter.sendMail(mailOptions);
-        res.send("Message sent successfully!");
-    } catch (error) {
-        console.error(error);
-        res.status(500).send("Failed to send message.");
+/**---------------------- */
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Show sending status
+            formStatus.textContent = 'Sending...';
+            formStatus.style.color = '#00ffee';
+            
+            // Send email using EmailJS
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    formStatus.textContent = 'Message sent successfully!';
+                    formStatus.style.color = '#00ffee';
+                    
+                    // Clear the form
+                    contactForm.reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        formStatus.textContent = '';
+                    }, 5000);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    formStatus.textContent = 'Failed to send message. Please try again.';
+                    formStatus.style.color = 'red';
+                });
+        });
     }
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    
+    // Rest of your existing JavaScript code...
 });

@@ -6,6 +6,13 @@
     <title>Website portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your public key
+        (function() {
+         emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Get from EmailJS dashboard
+        })();
+</script>
 </head>
 <body>
     <header class="header">
@@ -53,7 +60,7 @@
         </div>
     </section>
     <section class="education" id="education">
-        <h2 class="heading">Education</h2>
+        <h2 class="heading">Education & Experiance</h2>
 
         <div class="timeline-items">
 
@@ -71,23 +78,17 @@
             </div>
 
         
-
-            
-
-       
-
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                     <div class="timeline-date">2021</div>
                     <div class="timeline-content">
                         <h3>University</h3>
                         <p>
-                            I became a student at the University of the Free State for Computer Science, where I completed my qualification. 
+                            I became a student at the University of the Free State where I completed my Computer Science qualification. 
                         </p>
                     </div>
                 
-
-            </div>
+                </div>
 
 
             <div class="timeline-item">
@@ -96,11 +97,22 @@
                     <div class="timeline-content">
                         <h3>Emplyoment</h3>
                         <p>
-                            I'm currently seeking for start-up role in software development.
+                            6 Months IT work experience at Divine Academy Skills Training.
                         </p>
                     </div>
                 
+            </div>
 
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                    <div class="timeline-date">2026</div>
+                    <div class="timeline-content">
+                        <h3>Emplyoment</h3>
+                        <p>
+                            I'm currently seeking for entry-level role in Tech.
+                        </p>
+                    </div>
+                
             </div>
 
         </div>
@@ -156,54 +168,20 @@
 
         <div class="projects-box">
             <div class="project-card">
-                <img src="tdl.jpg" alt="">
-
-                <h3>To-Do-List App</h3>
+                <img src="crud.png" alt="">
+                <h3>CRUD</h3>
                 <p>
-                    This is a simple TO-Do-List App Project. <br>
-                    This Project was to test my React Native Skills including
-                    Human-Computer interaction which determines
-                    whether it is user friendly.
-                </br><i>Created with react-native.</i>
+                 A CRUD windows application where a user signs in and manages inventory.
+                </br><i>Created on a .NET framework.</i>
                 </p>
-                <a class="btn" target="_blank" href="https://github.com/goodmanDzunan/ToDoList_app">Review Project</a>
 
-            </div>
-            <div class="project-card">
-                <img src="da.jpg" alt="">
-
-                <h3>Data Analysis</h3>
-                <p>
-                    In this Project I did an analysis on a Spotify dataset to check the most played genre and top artists in the music industry according to 
-                    what the listeners listen to the most.
-                </p>
-                <a class="btn" target="_blank" href="https://colab.research.google.com/drive/1xC8fxvz5FGQ3ZIA7jqm2zAd3SxsZQ5hm#scrollTo=n0AhvzOwSt6v" target="_blank" rel="noopener noreferrer">
-                    Review Project
-                </a>
-
-            </div>
-
-            <div class="project-card">
-                <img src="VZ.png" alt="">
-
-                <h3>Dashboard visualization</h3>
-                <p>
-                    A user friendly dashboard visualization I did from lookerstudio where I was comparing consumers' employment statuses and Price Increase.
-                </p>
-                <a class="btn" target="_blank" href="https://lookerstudio.google.com/u/0/reporting/77f1c832-d5b8-41d9-845a-1b8c0f108216/page/1nJ0D">Review Project</a>
-
-            </div>
-
-            <div class="project-card">
-                <img src="aa.jpg" alt="">
-
-                <h3>Memory Game</h3>
-                <p>
-                    Test your memory skills with this fun game!
-                </br><i>Created with html, css and JavaScript.</i>
-                </p>
-                <a class="btn" target="_blank" href="https://goodmandzunan.github.io/Memory_Game/">Review Project</a>
-
+                <a class="btn" href="https://github.com/goodmanDzunan/CRUD">Review Project</a>
+                
+                <div class="btn-container">
+                        <!-- Video Demo Button -->
+                <a class="btn" href="CRUD.mp4" target="_blank" rel="noopener noreferrer">Watch Demo</a>
+                </div>
+                
             </div>
 
             <div class="project-card">
@@ -215,8 +193,17 @@
                     </br><i>Created on a dotnet framework.</i>
                 </p>
                 <a class="btn" href="https://github.com/goodmanDzunan/PhotoDraw">Review Project</a>
+                
+                <!-- Video Demo Button -->
+                 <div class="btn-container">
+                    <a class="btn" href="Drawing Lines.mp4" target="_blank" rel="noopener noreferrer">Watch Demo</a>
+                 </div>
+                
 
             </div>
+
+            
+
             <div class="project-card">
                 <img src="stck.jpg" alt="">
 
@@ -227,9 +214,76 @@
                 </p>
                 <a class="btn" href="https://github.com/goodmanDzunan/StockControl">Review Project</a>
 
+                <!-- Video Demo Button -->
+                <div class="btn-container">
+                    <a class="btn" href="Stock Control.mp4" target="_blank" rel="noopener noreferrer">Watch Demo</a>
+                </div>
+            
+
             </div>
 
+            <div class="project-card">
+                <img src="da.jpg" alt="">
 
+                <h3>Data Analysis</h3>
+                <p>
+                    In this Project I did an analysis on a Spotify dataset to check the most played genre and top artists in the music industry according to 
+                    what the listeners listen to the most.
+                </p>
+                <div class="btn-container">
+                    <a class="btn" target="_blank" href="https://colab.research.google.com/drive/1xC8fxvz5FGQ3ZIA7jqm2zAd3SxsZQ5hm#scrollTo=n0AhvzOwSt6v" target="_blank" rel="noopener noreferrer">
+                        Review Project
+                    </a>
+                </div>
+                
+            </div>
+
+            <div class="project-card">
+                <img src="VZ.png" alt="">
+
+                <h3>Dashboard visualization</h3>
+                <p>
+                    A user friendly dashboard visualization I did from lookerstudio where I was comparing consumers' employment statuses and Price Increase.
+                </p>
+                
+                <div class="btn-container">
+                    <a class="btn" target="_blank" href="https://lookerstudio.google.com/u/0/reporting/77f1c832-d5b8-41d9-845a-1b8c0f108216/page/1nJ0D">Review Project</a>
+
+                </div>
+                
+            </div>
+
+            <div class="project-card">
+                <img src="aa.jpg" alt="">
+
+                <h3>Memory Game</h3>
+                <p>
+                    Test your memory skills with this fun game!
+                </br><i>Created with html, css and JavaScript.</i>
+                </p>
+
+                <div cla="btn-container">
+                    <a class="btn" target="_blank" href="https://goodmandzunan.github.io/Memory_Game/">Review Project</a>
+                </div>
+                
+            </div>
+
+            
+            
+
+
+        </div>
+
+
+        <!--------------- Video Modal ------------------------>
+        <div id="videoModal" class="video-modal">
+            <div class="video-modal-content">
+                <span class="close-btn">&times;</span>
+                <video id="demoVideo" controls>
+                    <source id="videoSource" src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
 
     </section>
@@ -293,20 +347,20 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
 
-        <form action="/send-message" method="POST">
+        <form id="contact-form">
             <div class="input-group">
                 <div class="input-box">
-                    <input type="text" id="name" name="name" placeholder="Full Name" required>
-                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="text" id="name" name="from_name" placeholder="Full Name" required>
+                    <input type="email" id="email" name="reply_to" placeholder="Email" required>
                 </div>
                 <div class="input-box">
                     <input type="text" id="subject" name="subject" placeholder="Subject">
                 </div>
                 <textarea id="message" name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-                <input type="submit" value="Send Message" class="btn">
+                <button type="submit" class="btn">Send Message</button>
+                <p id="form-status" style="text-align: center; margin-top: 20px; font-size: 1.6rem;"></p>
             </div>
         </form>
-        
     </section>
 
     <footer class="footer">
